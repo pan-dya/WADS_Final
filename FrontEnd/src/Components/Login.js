@@ -1,6 +1,6 @@
 import {useRef,useState,useEffect} from 'react';
 import "../Design/Login.css";
-import Register from "./Register.js"
+import { Navigate } from 'react-router-dom'
 
 const Login= () => {
   const userRef = useRef();
@@ -27,34 +27,35 @@ const Login= () => {
     setSuccess(true);
   }
   return (
-    <>
-      {success ? (
-        <section>
-          <h1>You Are Logged in!</h1>
-          <br />
-          <p>
-              <a href="/">Go To Home Page</a>
-          </p>
-        </section>
-      ):(
-    <section>
-      <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live = "assertive">{errMsg}</p>
-      <h1>Log In</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor='name'>Name:</label>
-        <input type="text" id="username" ref={userRef} autoComplete='off' onChange={(e)=> setUser(e.target.value)} value={user} required/>
-        <label htmlFor='password'>password:</label>
-        <input type="password" id="password" onChange={(e)=> setPwd(e.target.value)} value={pwd} required/>
-        <button>Log In</button>
-      </form>
-      <p>Need an Account<br />
-          <span className='line'>{/*router link*/}
-          <a href="/register">Register</a>
-        </span>
-      </p>
-    </section>
-      )}
-    </>
+    <div className='loginPage'>
+        {success ? (
+          // <section>
+          //   <h1>You Are Logged in!</h1>
+          //   <br />
+          //   <p>
+          //       <a href="/">Go To Home Page</a>
+          //   </p>
+          // </section>
+          <Navigate to="/" replace={true} />
+        ):(
+      <div className='section'>
+        <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
+        <h1>Log In</h1>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor='name'>Name:</label>
+          <input type="text" id="username" ref={userRef} autoComplete='off' onChange={(e)=> setUser(e.target.value)} value={user} required/>
+          <label htmlFor='password'>Password:</label>
+          <input type="password" id="password" onChange={(e)=> setPwd(e.target.value)} value={pwd} required/>
+          <button className='btn'>Log In</button>
+        </form>
+        <p>Need an Account ?<br />
+            <span className='line'>{/*router link*/}
+            <a href="/register">Register Here</a>
+          </span>
+        </p>
+      </div>
+        )}
+    </div>
   )
 }
 
