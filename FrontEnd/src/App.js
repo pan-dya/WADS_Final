@@ -1,20 +1,28 @@
 import Home from './Pages/Home.js'
 import Faq from './Pages/Faq.js'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom'
 import Navbar from './Components/Navbar.js'
 import Footer from './Components/Footer.js'
-// import FloatingNav from './FloatingNav.js'
+import LoginField from './Components/LoginField.js'
 
 const App = () => {
   return (
     <Router>
-      <Navbar/>
       <Routes>
-        <Route path='/' element={<Home />}></Route>
-        <Route path='/faq' element={<Faq />}></Route>
+        <Route path='/login' element={<LoginField />}></Route>
+        <Route
+          element={
+            <>
+              <Navbar />
+              <Outlet />
+              <Footer />
+            </>
+          }
+        >
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/faq" element={<Faq />}></Route>
+        </Route>
       </Routes>
-      <Footer />
-      {/* <FloatingNav/> */}
     </Router>
   )
 }
