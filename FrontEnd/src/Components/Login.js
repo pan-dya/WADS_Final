@@ -1,5 +1,6 @@
 import {useRef,useState,useEffect} from 'react';
 import "../Design/Login.css";
+import Register from "./Register.js"
 
 const Login= () => {
   const userRef = useRef();
@@ -48,7 +49,7 @@ const Login= () => {
       </form>
       <p>Need an Account<br />
           <span className='line'>{/*router link*/}
-          <a href="#">Register</a>
+          <a href="/register">Register</a>
         </span>
       </p>
     </section>
