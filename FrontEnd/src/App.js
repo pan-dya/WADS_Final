@@ -1,21 +1,13 @@
-import Navbar from './Navbar.js'
-import Header from './Header.js'
-import About from './About.js'
-import Services from './Services.js'
-import Faq from './Faq.js'
-import Footer from './Footer.js'
-import FloatingNav from './FloatingNav.js'
+import Home from './Pages/Home.js'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 const App = () => {
   return (
-    <main>
-      <Navbar/>
-      <Header/>
-      <About/>
-      <Services/>
-      <Footer/>
-      {/* <FloatingNav/> */}
-    </main>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home/>}></Route>
+      </Routes>
+    </Router>
   )
 }
 

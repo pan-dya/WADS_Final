@@ -1,5 +1,5 @@
-import './Design/Services.css'
-import ServiceData from './ServiceData.js'
+import '../Design/Services.css'
+import ServiceData from '../Data/ServiceData.js'
 import Card from './Card.js'
 
 const Services = () => {

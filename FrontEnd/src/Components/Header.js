@@ -1,5 +1,5 @@
-import './Design/Header.css'
-import HeaderImage from './Assets/OddJobsIcon.png'
+import '../Design/Header.css'
+import HeaderImage from '../Assets/OddJobsIcon.png'
 
 const Header = () => {
   return (

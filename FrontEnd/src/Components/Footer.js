@@ -1,5 +1,5 @@
-import './Design/Footer.css'
-import ig from './Assets/instagram.png'
+import '../Design/Footer.css'
+import ig from '../Assets/instagram.png'
 
 const Footer = () => {
   return (

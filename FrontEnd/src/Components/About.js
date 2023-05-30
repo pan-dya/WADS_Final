@@ -1,8 +1,8 @@
-import '../src/Design/About.css'
-import Image1 from './Assets/holdhands.jpg'
-import Image2 from './Assets/kidsmile.jpg'
+import '../Design/About.css'
+import Image1 from '../Assets/holdhands.jpg'
+import Image2 from '../Assets/kidsmile.jpg'
 import Card from './Card'
-import CardData from './CardData'
+import CardData from '../Data/CardData'
 
 const About = () => {
   return (

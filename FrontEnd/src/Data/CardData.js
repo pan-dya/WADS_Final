@@ -1,4 +1,4 @@
-import {TfiFaceSmile} from 'react-icons/tfi'
+import { TfiFaceSmile } from 'react-icons/tfi'
 import { MdOutlineCleaningServices } from 'react-icons/md'
 import { VscWorkspaceTrusted } from 'react-icons/vsc'
 

@@ -1,6 +1,6 @@
-import './Design/Navbar.css'
-import Logo from './Assets/OddJobsIcon.png'
-import Link from './Link.js'
+import '../Design/Navbar.css'
+import Logo from '../Assets/OddJobsIcon.png'
+import Link from '../Data/Link.js'
 import {FiLogIn} from 'react-icons/fi'
 
 const Navbar = () => {
