@@ -4,9 +4,25 @@ import db from "../config/Database.js";
 const {DataTypes} = Sequelize;
 
 const User = db.define('users',{
-    name: DataTypes.STRING,
-    email: DataTypes.STRING,
-    gender: DataTypes.STRING
+    id:{
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        unique: true,
+        primaryKey: true
+    },
+    name:{
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    email:{
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    hashedPassword:{
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+
 },{
     freezeTableName:true
 })
