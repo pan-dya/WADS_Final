@@ -1,5 +1,8 @@
 .footer {
     background: var(--color-primary);
+    /* position: fixed; */
+    bottom: 0px;
+    height: 30vh;
 }
 
 .footer-padding {
@@ -59,4 +62,14 @@ hr {
     line-height: 15px;
     color: white;
     font-weight: 600;
+}
+
+@media screen and (max-width: 1024px) { 
+
+}
+
+@media screen and (max-width: 600px) { 
+    .footer {
+        height: 55vh;
+    }
 }
