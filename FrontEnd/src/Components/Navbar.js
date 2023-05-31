@@ -15,7 +15,7 @@ const Navbar = () => {
             Link.map(item => <li key={item.id}><a href={item.link}>{item.title}</a></li>)
           }
         </ul>
-        <button id='theme_icon'><FiLogIn/></button>
+        <a id='theme_icon' href='/login'><FiLogIn/></a>
       </div>
     </nav>
   )

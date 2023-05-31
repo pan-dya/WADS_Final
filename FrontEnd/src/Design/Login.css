@@ -1,12 +1,19 @@
-section {
+.loginPage {
+  margin: auto;
+  width: 20%;
+  margin-top: 10%;
+}
+
+.section {
     width: 100%;
-    max-width: 420px;
-    min-height: 400px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
     padding: 1rem;
-    background-color: rgba(0,0,0,0.4);
+    background-color: var(--color-dark);
+    border: 2px solid transparent;
+    border-radius: var(--border-radius-1);
 }
 
 form {
@@ -17,15 +24,16 @@ form {
     padding-bottom: 1rem;
 }
 
-a, a:visited {
-    color: #fff;
+a {
+    color: var(--color-light);
+}
+
+a:hover {
+  color: var(--color-primary);
 }
 
 input[type="text"],
-input[type="password"],
-button,
-textarea {
-  font-family: 'Nunito', sans-serif;
+input[type="password"] {
   font-size: 22px;
   padding: 0.25rem;
   border-radius: 0.5rem;
@@ -40,3 +48,28 @@ button {
   padding: 0.5rem;
 }
 
+@media screen and (max-width: 1024px) {
+  .loginPage {
+    width: 20%;
+    margin-left: 27%;
+  }
+  .section {
+    width: 230%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .loginPage{
+    width: 40%;
+    margin-left: 10%;
+  }
+  .section {
+    width: 200%;
+  }
+  input[type="text"],
+  input[type="password"] {
+  font-size: 13px;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+}
+}

@@ -124,7 +124,7 @@ img {
 .btn:hover {
     background-color: transparent;
     border-color: var(--color-light);
-    transform: translateY(-0.5rem);
+    color: var(--color-light);
 }
 
 .btn.white {
