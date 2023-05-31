@@ -1,61 +1,57 @@
-import {useRef,useState,useEffect} from 'react';
-import "../Design/Login.css";
-import Register from "./Register.js"
+import React,{useState} from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
-const Login= () => {
-  const userRef = useRef();
-  const errRef = useRef();
+const Login = () => {
+  const [email, setEmail] = useState('');
+  const [pwd, setPwd] = useState('');
+  const [msg, setMsg]= useState('');
+  const navigate = useNavigate();
 
-  const [user, setUser] = useState('');
-  const [pwd,setPwd] = useState('');
-  const [errMsg, setErrMsg] = useState('');
-  const [success, setSuccess] = useState(false);
-
-  useEffect(()=>{
-    userRef.current.focus();
-  }, [])
-
-  useEffect(()=>{
-    setErrMsg('');
-  }, [user, pwd])
-
-  const handleSubmit = async (e) => {
+  const Auth = async (e) =>{
     e.preventDefault();
-    console.log(user,pwd);
-    setUser('');
-    setPwd('');
-    setSuccess(true);
-  }
-  return (
-    <>
-      {success ? (
-        <section>
-          <h1>You Are Logged in!</h1>
-          <br />
-          <p>
-              <a href="/">Go To Home Page</a>
-          </p>
-        </section>
-      ):(
-    <section>
-      <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live = "assertive">{errMsg}</p>
-      <h1>Log In</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor='name'>Name:</label>
-        <input type="text" id="username" ref={userRef} autoComplete='off' onChange={(e)=> setUser(e.target.value)} value={user} required/>
-        <label htmlFor='password'>password:</label>
-        <input type="password" id="password" onChange={(e)=> setPwd(e.target.value)} value={pwd} required/>
-        <button>Log In</button>
-      </form>
-      <p>Need an Account<br />
-          <span className='line'>{/*router link*/}
-          <a href="/register">Register</a>
-        </span>
-      </p>
-    </section>
-      )}
-    </>
-  )
+    try {
+        await axios.post('http://localhost:5000/login', {
+            email:email,
+            password: pwd,
+        });
+        navigate("/");
+    } catch (error) {
+        if(error.response){
+            setMsg(error.response.data.msg); 
+        }
+    }
 }
+  return(
+    <section className="hero has-background-grey-light is-fullwidth is-fullheight">
+      <div className="hero-body">
+        <div className="container">
+          <div className="columns is-centered">
+            <div className="column is-4-desktop">
+              <form onSubmit={Auth} className="box">
+                <p>{msg}</p>
+                <div className="field mt-5">
+                  <label className="label">Email</label>
+                  <div className="control">
+                    <input type="text" className="input" placeholder="Username" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+                  </div>
+                </div>
+                <div className="field mt-5">
+                  <label className="label">Password</label>
+                  <div className="control">
+                    <input type="password" className="input" placeholder="*********" value={pwd} onChange={(e)=>setPwd(e.target.value)}/>
+                  </div>
+                </div>
+                <div className="field mt-5">
+                  <button className="button is-success is-fullwidth">Login</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  ) 
+} 
 
-export default Login;
+export default Login

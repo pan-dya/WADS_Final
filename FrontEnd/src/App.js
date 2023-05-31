@@ -3,13 +3,15 @@ import Faq from './Pages/Faq.js'
 import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom'
 import Navbar from './Components/Navbar.js'
 import Footer from './Components/Footer.js'
-import LoginField from './Components/Login.js'
+import Login from './Components/Login.js'
+import Register from './Components/Register.js'
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path='/login' element={<LoginField />}></Route>
+        <Route path='/login' element={<Login />}></Route>
+        <Route path='/register' element={<Register />}></Route>
         <Route
           element={
             <>

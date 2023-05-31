@@ -1,27 +1,28 @@
 GET http://localhost:5000/users
-
-###
-GET http://localhost:5000/users/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJKb2huIERvZSIsImVtYWlsIjoiSm9obkRvZUBnbWFpbC5jb20iLCJpYXQiOjE2ODU1NDkyMTMsImV4cCI6MTY4NTU0OTI0M30.i6MLncV73M4Vpp_-7HOMz9lGXlmNUxilj6h-CfgKLz8
 
 ###
 POST http://localhost:5000/users
 Content-Type: application/json
 
 {
-    "name": "John Doe",
-    "email": "John@gmail.com",
-    "gender": "Male"
+    "name": "John Doe 2",
+    "email": "JohnDoe@gmail.com",
+    "password": "123456",
+    "confPassword": "123457" 
 }
 
 ###
-PATCH http://localhost:5000/users/1
+POST http://localhost:5000/login
 Content-Type: application/json
 
 {
-    "name": "Jonni Jonni",
-    "email": "Joni123@gmail.com",
-    "gender": "Male"
+    "email": "JohnDoe@gmail.com",
+    "password": "123456"
 }
 
 ###
-DELETE http://localhost:5000/users/3
+GET http://localhost:5000/token
+
+###
+DELETE http://localhost:5000/logout
