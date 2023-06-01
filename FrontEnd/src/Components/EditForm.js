@@ -8,23 +8,24 @@ function EditForm() {
           <h2>Edit Profile</h2>
         </div>
         <div className="actual-form">
+          <div className="input-wrap"> Name     : Current Name</div>
+          <div className="input-wrap"> Email    : Current Email</div>
           <div className="input-wrap">
             <input
               type="text"
               className="input-field"
-              placeholder="Name"
-            //   value={name}
-            //   onChange={(e) => setName(e.target.value)}
+              placeholder="New Name"
+              //   value={name}
+              //   onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div className="input-wrap">
-            {/* <label>E-Mail</label> */}
             <input
               type="text"
               className="input-field"
-              placeholder="E-mail"
-            //   value={email}
-            //   onChange={(e) => setEmail(e.target.value)}
+              placeholder="New E-mail"
+              //   value={email}
+              //   onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <button className="sign-btn">Save Changes</button>
