@@ -92,7 +92,7 @@ const Register = () => {
                       onChange={(e) => setConfpwd(e.target.value)}
                     />
                   </div>
-                  <button className="sign-btn">Login</button>
+                  <button className="sign-btn">Register</button>
                 </div>
                 <h5>{msg}</h5>
               </form>
