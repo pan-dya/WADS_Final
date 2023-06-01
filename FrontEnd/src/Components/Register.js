@@ -35,10 +35,10 @@ const Register = () => {
       <main className="main">
         <div className="box">
           <div className="inner-box">
-            <div className="image-side">
+            <div className="image-side2">
               <img className="image-wrap" src={image} alt=""></img>
             </div>
-            <div className="form-wrap">
+            <div className="form-wrap2">
               <form onSubmit={Register} className="signup-form">
                 <div className="logo">
                   <img src={logo} alt="OddJobs"></img>
