@@ -9,7 +9,7 @@ const Footer = () => {
           <a href='/faq' className='footer-links-div'><h4>FAQs</h4></a>
           <div className='footer-links-div'>
             <h4>Contacts</h4>
-            <p>Phone Number</p>
+            <p>(021)1600 400</p>
             <p>OddJobs.gmail.com</p>
             <p><img src={ig} alt='IG'></img></p>
           </div>

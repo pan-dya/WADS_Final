@@ -5,6 +5,8 @@ import Navbar from './Components/Navbar.js'
 import Footer from './Components/Footer.js'
 import Login from './Components/Login.js'
 import Register from './Components/Register.js'
+import PageNotFound from './Pages/PageNotFound.js'
+import Profile from './Pages/Profile.js'
 
 const App = () => {
   return (
@@ -12,6 +14,7 @@ const App = () => {
       <Routes>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/register' element={<Register />}></Route>
+        <Route path='*' element={<PageNotFound/>}></Route>
         <Route
           element={
             <>
@@ -23,6 +26,7 @@ const App = () => {
         >
           <Route path="/" element={<Home />}></Route>
           <Route path="/faq" element={<Faq />}></Route>
+          <Route path="/profile" element={<Profile/>}></Route>
         </Route>
       </Routes>
     </Router>

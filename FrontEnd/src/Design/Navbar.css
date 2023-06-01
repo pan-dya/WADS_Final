@@ -30,11 +30,28 @@ nav {
     gap: 3.5rem;
 }
 
+.button_container {
+    display: flex;
+}
+
 #theme_icon {
     background: transparent;
     color: white;
     font-size: 2rem;
     cursor: pointer;
+    padding-left: 5px;
+}
+
+#profile_icon {
+    background: transparent;
+    color: white;
+    font-size: 2rem;
+    padding-right: 5px;
+}
+
+.vl {
+    border-left: 2px solid white;
+    height: 2rem;
 }
 
 /* HIDE NAV MENU ON TABLET AND PHONES */

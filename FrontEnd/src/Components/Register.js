@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import logo from "../Assets/OddJobsIcon.png";
-import image from "../Assets/imageRegister.webp";
+import image from "../Assets/imageRegister3.webp";
 import "../Design/Register.css";
 
 const Register = () => {

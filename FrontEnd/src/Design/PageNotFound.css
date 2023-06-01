@@ -1,0 +1,15 @@
+.pnf {
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    margin: auto;
+    margin-top: 5%;
+}
+
+.linkPNF {
+    color: var(--color-dark);
+}
+
+.linkPNF:hover {
+    color: var(--color-primary);
+}

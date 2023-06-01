@@ -10,8 +10,8 @@ const About = () => {
       <div className='container about_container'>
         <div className='about_left'>
           <div className='about_image'>
-            <img src={Image1} alt='Image 1' />
-            <img src={Image2} alt='Image 2' />
+            <img src={Image1} alt='About 1' />
+            <img src={Image2} alt='About 2' />
           </div>
         </div>
         <div className='about_right'>
