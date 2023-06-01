@@ -1,0 +1,190 @@
+.main {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: var(--color-primary);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .box {
+    position: relative;
+    width: 100%;
+    max-width: 1020px;
+    height: 640px;
+    background-color: var(--color-white);
+    border-radius: 3.3rem;
+    box-shadow: 60px 60px 40px -30px rgba(0, 0, 0, 0.57);
+  }
+  
+  .inner-box {
+    position: absolute;
+    width: calc(100% - 4.1rem);
+    height: calc(100% - 4.1rem);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .form-wrap {
+    position: absolute;
+    height: 100%;
+    width: 155%;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    transition: 0.8s ease-in-out;
+  }
+  
+  form {
+    max-width: 260px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    transition: opacity 0.02s 0.4s;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    width: 27px;
+    margin-right: 0.3rem;
+    border-radius: 50%;
+  }
+  
+  .logo h4 {
+    font-size: 1.1rem;
+    margin-left: 8px;
+    letter-spacing: -0.5px;
+    color: var(--color-black);
+  }
+  
+  .heading h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
+  }
+  
+  .heading h6 {
+    font-weight: 400;
+    font-size: 0.75rem;
+    display: inline;
+  }
+  
+  .toggle {
+    color: var(--color-black);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+  
+  .toggle:hover {
+    color: var(--color-primary);
+  }
+  
+  .input-wrap {
+    position: relative;
+    height: 37px;
+    margin-bottom: 2rem;
+  }
+  
+  .input-field {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #bbb;
+    padding: 0;
+    font-size: 0.95rem;
+    color: var(--color-black);
+    transition: var(--transition);
+  }
+  
+  .sign-btn {
+    display: inline-block;
+    width: 100%;
+    height: 43px;
+    background-color: #151111;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.8rem;
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+    transition: 0.3s;
+  }
+  
+  .sign-btn:hover {
+    background-color: #8371fd;
+  }
+  
+  .image-side {
+    position: absolute;
+    height: 100%;
+    width: 55%;
+    left: 0%;
+    top: 0;
+    background-color: var(--color-primary-lighter);
+    border-radius: 2rem;
+    padding-bottom: 2rem;
+    overflow: hidden;
+  }
+  
+  .image-wrap {
+    width: 100%;
+    height: 110%;
+  }
+  
+  @media (max-width: 850px) {
+    .box {
+      height: auto;
+      max-width: 550px;
+      overflow: hidden;
+    }
+  
+    .inner-box {
+      position: static;
+      transform: none;
+      width: revert;
+      height: revert;
+      padding: 2rem;
+    }
+  
+    .form-wrap {
+      position: revert;
+      width: 100%;
+      height: auto;
+    }
+  
+    form {
+      max-width: revert;
+      padding: 1.5rem 2.5rem 2rem;
+      transition: transform 0.8s ease-in-out, opacity 0.45s linear;
+    }
+  
+    .heading {
+      margin: 2rem 0;
+    }
+  
+    .image-side {
+      display: none;
+    }
+  
+    .image-wrap {
+      display: none;
+    }
+  }

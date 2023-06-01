@@ -19,6 +19,7 @@ html {
     --light-lightness: 94%;
     --white-lightness: 100%;
     --color-primary: hsl(var(--primary-hue), 84%, 45%);
+    --color-primary-lighter: hsl(var(--primary-hue), 84%, 75%);
     --color-white: hsl(0, 5%, var(--white-lightness));
     --color-light: hsl(var(--primary-hue), 5%, var(--light-lightness));
     --color-black: hsl(var(--primary-hue), 5%, var(--black-lightness));
