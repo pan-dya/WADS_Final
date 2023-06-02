@@ -17,6 +17,7 @@ const Navbar = () => {
       console.log(error);
     }
   };
+
   return (
     <nav>
       <div className="container nav_container">
@@ -31,7 +32,7 @@ const Navbar = () => {
           ))}
         </ul>
         <div className="button_container">
-          <button href="/profile" id="profile_icon">
+          <button onClick={event =>  window.location.href='/profile'} id="profile_icon">
             <AiOutlineUser />
           </button>
           <div className="vl"></div>

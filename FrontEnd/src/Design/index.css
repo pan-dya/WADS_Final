@@ -152,6 +152,10 @@ img {
     padding: 0.5rem 1.2rem;
 }
 
+button:hover {
+    cursor:pointer
+}
+
 /* TABLET */
 @media screen and (max-width: 1024px) {
     body {
