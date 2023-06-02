@@ -28,6 +28,7 @@ export const Register= async(req,res)=>{
     } catch (error) {
         console.log(error);
     }
+    // if(name === null || password === null || email === null || confPassword === null) return res.status(400).json({msg: "There Are Empty Fields, Please Fill All Fields First Before Registering"});
 }
 
 export const Login = async (req,res)=>{
