@@ -9,12 +9,12 @@ const AddressForm = () => {
   const [details, setDetails] = useState("");
   const [postal_Code, setPostal_code] = useState("");
   const [msg, setMsg] = useState("");
-  // const prov = useRef("");
-  // const cty = useRef("");
-  // const rgn = useRef("");
-  // const det = useRef("");
-  // const pos = useRef("");
-  const [userId, setUserId] = useState(""); // State variable to store the user ID
+  const prov = useRef("");
+  const cty = useRef("");
+  const rgn = useRef("");
+  const det = useRef("");
+  const pos = useRef("");
+  const [userId, setUserId] = useState("");
   const [token, setToken] = useState('');
 
   useEffect(() => {
@@ -22,10 +22,6 @@ const AddressForm = () => {
   }, []);
 
   const fetchUser = async () => {
-    // try {
-    //   const response = await axios.get("http://localhost:5000/users"); // Replace with the actual API endpoint to fetch user data
-    //   const userData = response.data;
-    //   setUserId(userData.id); // Assuming the user ID is available in the 'id' property of the response data
     try {
       const response = await axios.get('http://localhost:5000/token');
       setToken(response.data.accessToken);
@@ -39,11 +35,7 @@ const AddressForm = () => {
 
   const createAddress = async (e) => {
     e.preventDefault();
-    // prov.current.value = "";
-    // cty.current.value = "";
-    // rgn.current.value = "";
-    // det.current.value = "";
-    // pos.current.value = "";
+
     try {
       await axios.post("http://localhost:5000/address", {
         province: province,
@@ -81,7 +73,7 @@ const AddressForm = () => {
               type="text"
               className="input-field2"
               placeholder="Province"
-              // ref={province}
+              ref={prov}
               value={province}
               onChange={(e) => setProvince(e.target.value)}
             />
@@ -91,7 +83,7 @@ const AddressForm = () => {
               type="text"
               className="input-field2"
               placeholder="City"
-              // ref={city}
+              ref={cty}
               value={city}
               onChange={(e) => setCity(e.target.value)}
             />
@@ -101,7 +93,7 @@ const AddressForm = () => {
               type="text"
               className="input-field2"
               placeholder="Regency"
-              // ref={rgn}
+              ref={rgn}
               value={regency}
               onChange={(e) => setRegency(e.target.value)}
             />
@@ -111,7 +103,7 @@ const AddressForm = () => {
               type="text"
               className="input-field2"
               placeholder="Details"
-              // ref={det}
+              ref={det}
               value={details}
               onChange={(e) => setDetails(e.target.value)}
             />
@@ -121,7 +113,7 @@ const AddressForm = () => {
               type="text"
               className="input-field2"
               placeholder="Postal Code"
-              // ref={pos}
+              ref={pos}
               value={postal_Code}
               onChange={(e) => setPostal_code(e.target.value)}
             />

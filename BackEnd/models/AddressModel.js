@@ -26,6 +26,11 @@ const Address = db.define('address',{
     postal_code:{
         type: DataTypes.INTEGER,
         allowNull: false
+    },
+    userId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        unique:true,
     }
 },{
     freezeTableName:true
