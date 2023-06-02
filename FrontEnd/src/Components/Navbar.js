@@ -31,9 +31,9 @@ const Navbar = () => {
           ))}
         </ul>
         <div className="button_container">
-          <a href="/profile" id="profile_icon">
+          <button href="/profile" id="profile_icon">
             <AiOutlineUser />
-          </a>
+          </button>
           <div className="vl"></div>
           <button onClick={Logout} id="theme_icon">
             <FiLogIn />
