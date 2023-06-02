@@ -2,7 +2,8 @@
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
-    background-color: var(--color-light);
+    background-color: var(--color-white);
+    /* background: ; */
     /* padding: 0px 0px 2rem; */
     display: flex;
     align-items: center;
@@ -15,7 +16,7 @@
     width: 100%;
     max-width: 1250px;
     height: 640px;
-    background-color: var(--color-white);
+    background-color: var(--color-light);
     /* border-radius: 3.3rem; */
     box-shadow: 30px 30px 40px -10px rgba(0, 0, 0, 0.57);
     margin-top: 10vh;
@@ -67,7 +68,7 @@
     color: white;
     padding-left: 25px;
     background-color: var(--color-primary-lighter);
-    height: 50px;
+    height: 45px;
     width: 150px;
     line-height: 50px;
     border-radius: var(--border-radius-1);
@@ -138,7 +139,7 @@
     }
 
     .active-sidenav {
-        height:50px;
+        height: 45px;
         width: 50px;
         padding-left: 15px;
     }
@@ -166,5 +167,17 @@
 
     .input-field2 {
         width: 100%;
+    }
+}
+
+@media screen and (max-height: 850px) {
+    .profile-page {
+        min-height: 110vh;
+    }
+}
+
+@media screen and (max-height: 675px) {
+    .profile-page {
+        min-height: 120vh;
     }
 }

@@ -5,6 +5,7 @@ import { AiOutlineEdit } from "react-icons/ai";
 import { BiHomeAlt2, BiLockOpenAlt } from "react-icons/bi";
 import EditForm from "../Components/EditForm";
 import AddressForm from "../Components/AddressForm";
+import background from "../Assets/background.jpg";
 
 function Profile() {
   const [toggleState, setToggleState] = useState(1);
@@ -14,7 +15,14 @@ function Profile() {
   };
 
   return (
-    <div className="profile-page">
+    <div
+      className="profile-page"
+      style={{
+        backgroundImage: `url(${background})`,
+        backgroundRepeat: "no-repeat ",
+        backgroundSize: "cover",
+      }}
+    >
       <div className="box-profile">
         <div className="sidebar">
           <div className="user-profile">
@@ -60,12 +68,12 @@ function Profile() {
         <div
           className={toggleState === 1 ? "active-profile-tab" : "profile-tab"}
         >
-          <EditForm/>
+          <EditForm />
         </div>
         <div
           className={toggleState === 2 ? "active-profile-tab" : "profile-tab"}
         >
-          <AddressForm/>
+          <AddressForm />
         </div>
         <div
           className={toggleState === 3 ? "active-profile-tab" : "profile-tab"}

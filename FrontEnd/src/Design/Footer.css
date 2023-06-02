@@ -68,8 +68,20 @@ hr {
 
 }
 
-@media screen and (max-width: 600px) { 
+@media screen and (max-width: 600px) and (max-height:850px) { 
+    .footer {
+        height: 45vh;
+    }
+}
+
+@media screen and (max-width: 600px) and (max-height:675px) { 
     .footer {
         height: 55vh;
+    }
+}
+
+@media screen and (max-height: 850px) and (min-width: 601px) { 
+    .footer {
+        height: 35vh;
     }
 }
