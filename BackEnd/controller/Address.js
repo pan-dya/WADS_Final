@@ -15,8 +15,8 @@ export const getAddress= async (req,res) =>{
 }
 
 export const add_Address= async(req,res)=>{
-    const {province,city,regency,details,postal_code,UserId} = req.body;
-    const userId = req.params.userId;
+    const {province,city,regency,details,postal_code,userId} = req.body;
+    // const userId = req.params.userId;
     // if(province === null || city === null || regency === null || details === null || postal_code === null) return res.status(400).json({msg: "There Are Empty Fields, Please Fill All Fields First Before Registering"});
     try {
         await Address.create({
