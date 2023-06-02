@@ -13,7 +13,16 @@ const app=express();
 try {
     await db.authenticate();
     console.log('Database Connected...');
-    // await db.sync({alter:true});
+    let address, users;
+    await db.sync({alter:true}).then(()=>{
+        return Address.findOne({where:{id:1}});
+    }).then((data)=>{
+        address = data;
+        return Users.findOne({where:{name:"Justin"}});
+    }).then((data)=>{
+        users = data;
+        users.setAddress(address);
+    });
 } catch (error) {
     console.error(error);
 }

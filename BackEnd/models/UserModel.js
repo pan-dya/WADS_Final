@@ -4,7 +4,7 @@ import Address from "./AddressModel.js";
 
 const {DataTypes} = Sequelize;
 
-const Users = db.define('users',{
+export const Users = db.define('users',{
     name:{
         type:DataTypes.STRING,
         allowNull:false,
@@ -35,6 +35,11 @@ const Users = db.define('users',{
 });
 
 Users.hasOne(Address,{
-    foreignKey:"UserId"
+    foreignKey:{
+        name:"UserId",
+        
+    },
+    onDelete: "cascade"
 });
+
 export default Users;

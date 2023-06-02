@@ -31,6 +31,5 @@ const Address = db.define('address',{
     freezeTableName:true
 });
 
-// Address.belongsTo(Users);
 
 export default Address;

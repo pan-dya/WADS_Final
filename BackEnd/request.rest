@@ -31,7 +31,7 @@ POST http://localhost:5000/address
 Content-Type: application/json
 
 {
-    "province": "West Java",
+    "province": "East Java",
     "city": "Depok",
     "regency": "Pancoran Mas",
     "details": "blablabalbalbalabla abl bal balabl ala",
