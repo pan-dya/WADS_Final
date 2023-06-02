@@ -1,15 +1,14 @@
 GET http://localhost:5000/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJKb2huIERvZSIsImVtYWlsIjoiSm9obkRvZUBnbWFpbC5jb20iLCJpYXQiOjE2ODU1NDkyMTMsImV4cCI6MTY4NTU0OTI0M30.i6MLncV73M4Vpp_-7HOMz9lGXlmNUxilj6h-CfgKLz8
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsIm5hbWUiOiJKdXN0aW4gIiwiZW1haWwiOiJKdXN0aW5AZ21haWwuY29tIiwiaWF0IjoxNjg1Njk1OTcyLCJleHAiOjE2ODU2OTYwMDJ9.Lyaqs0OJmmBxQXRfcS5ZWLds4rY8mZC0cgHevA-_I5Q"
 ###
 POST http://localhost:5000/users
 Content-Type: application/json
 
 {
-    "name": "John Doe 2",
-    "email": "JohnDoe@gmail.com",
+    "name": "Justin",
+    "email": "Justin@gmail.com",
     "password": "123456",
-    "confPassword": "123457" 
+    "confPassword": "123456" 
 }
 
 ###
@@ -17,7 +16,7 @@ POST http://localhost:5000/login
 Content-Type: application/json
 
 {
-    "email": "JohnDoe@gmail.com",
+    "email": "Justin@gmail.com",
     "password": "123456"
 }
 
@@ -26,3 +25,19 @@ GET http://localhost:5000/token
 
 ###
 DELETE http://localhost:5000/logout
+
+###
+POST http://localhost:5000/address
+Content-Type: application/json
+
+{
+    "province": "West Java",
+    "city": "Depok",
+    "regency": "Pancoran Mas",
+    "details": "blablabalbalbalabla abl bal balabl ala",
+    "postal_code": 16356,
+    "userId": 1
+}
+
+###
+GET http://localhost:5000/address

@@ -13,7 +13,6 @@ const app=express();
 try {
     await db.authenticate();
     console.log('Database Connected...');
-    // Users.hasOne(Address);
     // await db.sync({alter:true});
 } catch (error) {
     console.error(error);

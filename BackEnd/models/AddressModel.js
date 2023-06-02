@@ -1,5 +1,6 @@
 import { Sequelize } from "sequelize";
 import db from "../config/Database.js";
+import Users from "./UserModel.js";
 
 const {DataTypes} = Sequelize;
 
@@ -29,5 +30,7 @@ const Address = db.define('address',{
 },{
     freezeTableName:true
 });
+
+// Address.belongsTo(Users);
 
 export default Address;
