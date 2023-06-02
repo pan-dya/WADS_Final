@@ -36,7 +36,7 @@ export const Users = db.define('users',{
 
 Users.hasOne(Address,{
     foreignKey:{
-        name:"UserId",
+        name:"userId",
         
     },
     onDelete: "cascade"

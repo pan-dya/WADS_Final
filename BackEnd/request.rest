@@ -31,12 +31,12 @@ POST http://localhost:5000/address
 Content-Type: application/json
 
 {
-    "province": "East Java",
+    "province": "West Java",
     "city": "Depok",
     "regency": "Pancoran Mas",
     "details": "blablabalbalbalabla abl bal balabl ala",
     "postal_code": 16356,
-    "userId": 1
+    "userId": 2
 }
 
 ###
