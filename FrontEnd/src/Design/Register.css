@@ -21,3 +21,15 @@
     padding-bottom: 2rem;
     overflow: hidden;
 }
+
+@media (max-width: 850px) {
+    .form-wrap2 {
+      position: revert;
+      width: 100%;
+      height: auto;
+    }
+
+    .image-side2 {
+      display: none;
+    }
+  }

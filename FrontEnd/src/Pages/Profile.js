@@ -67,7 +67,7 @@ const Profile = () => {
           <div className="user-profile">
             <FaUserCircle />
           </div>
-          <h2>Username</h2>
+          <h2>{name}</h2>
           <ul className="sidebar-nav">
             <li>
               <div
