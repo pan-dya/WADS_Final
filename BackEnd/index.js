@@ -3,15 +3,18 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import db from "./config/Database.js";
-// import Users from "./models/UserModel.js";
+import Users from "./models/UserModel.js";
 import router from "./routes/index.js";
+import Address from "./models/AddressModel.js";
+import { Sequelize } from "sequelize";
 dotenv.config();
 const app=express();
 
 try {
     await db.authenticate();
-    console.log('Database Connected...')
-    // await Users.sync();
+    console.log('Database Connected...');
+    // Users.hasOne(Address);
+    // await db.sync({alter:true});
 } catch (error) {
     console.error(error);
 }
