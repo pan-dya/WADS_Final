@@ -40,4 +40,17 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:5000/address
+GET http://localhost:5000/address/1
+
+###
+PUT http://localhost:5000/address/2
+Content-Type: application/json
+
+{
+    "province": "West Java",
+    "city": "Depok",
+    "regency": "Pancoran Mas",
+    "details": "updated address",
+    "postal_code": 16356,
+    "userId": 2
+}
