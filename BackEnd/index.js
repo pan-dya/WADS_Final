@@ -12,9 +12,9 @@ const app = express();
 
 try {
   await db.authenticate();
-  // console.log('Database Connected...');
+  console.log('Database Connected...');
   // let address, users;
-  await db.sync({ alter: true });
+  // await db.sync();
   //.then(() => {
   //     return Address.findOne({where:{id:1}});
   // }).then((data)=>{

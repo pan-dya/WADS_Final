@@ -51,6 +51,7 @@ const Login = () => {
                       className="input-field"
                       placeholder="E-mail"
                       value={email}
+                      required
                       onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
@@ -61,6 +62,9 @@ const Login = () => {
                       className="input-field"
                       placeholder="Password"
                       value={pwd}
+                      required
+                      maxLength="64"
+                      minLength="6"
                       onChange={(e) => setPwd(e.target.value)}
                     />
                   </div>

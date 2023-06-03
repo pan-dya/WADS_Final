@@ -41,7 +41,7 @@ const AddressForm = () => {
         `http://localhost:5000/address/${userId}`
       );
       const existingAddress = response.data;
-
+  
       if (existingAddress.length > 0) {
         // Address exists, perform update
         await axios.put(`http://localhost:5000/address/${userId}`, {
@@ -51,6 +51,7 @@ const AddressForm = () => {
           details: details,
           postal_code: postal_Code,
         });
+
 
         setMsg("Address Successfully Updated");
       } else {
@@ -88,6 +89,7 @@ const AddressForm = () => {
               placeholder="Province"
               ref={prov}
               value={province}
+              required
               onChange={(e) => setProvince(e.target.value)}
             />
           </div>
@@ -98,6 +100,7 @@ const AddressForm = () => {
               placeholder="City"
               ref={cty}
               value={city}
+              required
               onChange={(e) => setCity(e.target.value)}
             />
           </div>
@@ -108,6 +111,7 @@ const AddressForm = () => {
               placeholder="Regency"
               ref={rgn}
               value={regency}
+              required
               onChange={(e) => setRegency(e.target.value)}
             />
           </div>
@@ -118,6 +122,7 @@ const AddressForm = () => {
               placeholder="Details"
               ref={det}
               value={details}
+              required
               onChange={(e) => setDetails(e.target.value)}
             />
           </div>
@@ -128,6 +133,8 @@ const AddressForm = () => {
               placeholder="Postal Code"
               ref={pos}
               value={postal_Code}
+              maxLength="5"
+              required
               onChange={(e) => setPostal_code(e.target.value)}
             />
           </div>

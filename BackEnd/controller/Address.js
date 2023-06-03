@@ -30,7 +30,6 @@ export const getAddress = async (req, res) => {
 export const add_Address = async (req, res) => {
   const { province, city, regency, details, postal_code, userId } = req.body;
   // const userId = req.params.userId;
-  // if(province === null || city === null || regency === null || details === null || postal_code === null) return res.status(400).json({msg: "There Are Empty Fields, Please Fill All Fields First Before Registering"});
   try {
     await Address.create({
       province: province,
@@ -69,6 +68,6 @@ export const updateAddress = async (req, res) => {
     res.json({ msg: "Address successfully updated" });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ msg: "Internal server error" });
+    res.status(500).json({ msg: "Please Fill The Form Correctly!" });
   }
 };

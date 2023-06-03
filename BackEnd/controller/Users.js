@@ -83,3 +83,25 @@ export const Logout = async (req,res)=>{
     res.clearCookie('refreshToken');
     return res.sendStatus(200);
 }
+
+export const updateUser = async (req, res) => {
+  const { name, id } = req.body;
+  
+  try {
+    const user = await Users.findOne({
+      where: { id : id },
+    });
+    if (!user) {
+      return res.status(404).json({ msg: "User not found" });
+    }
+  
+    user.name = name;
+  
+    await user.save();
+  
+    res.json({ msg: "User Details Updated Successfully" });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ msg: "Please Fill The Form Correctly!" });
+  }
+};

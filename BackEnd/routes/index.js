@@ -1,5 +1,5 @@
 import express from "express";
-import { getUsers,Register, Login, Logout } from "../controller/Users.js";
+import { getUsers,Register, Login, Logout, updateUser } from "../controller/Users.js";
 import { getAddress, add_Address, updateAddress } from "../controller/Address.js";
 import { verifyToken } from "../middleware/verifyToken.js";
 import { refreshToken } from "../controller/RefreshToken.js";
@@ -12,6 +12,7 @@ router.put('/address/:userId', updateAddress);
 router.get('/users',verifyToken,getUsers);
 router.post('/users',Register);
 router.post('/login',Login);
+router.put('/users/:id', updateUser);
 router.get('/token',refreshToken);
 router.delete('/logout',Logout);
 

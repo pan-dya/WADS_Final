@@ -7,7 +7,9 @@ const EditForm = () => {
   const [name, setName]= useState('');
   const [email, setEmail] = useState('');
   const [token, setToken] = useState('');
+  const[id, setId] = useState('');
   const [expire, setExpire] = useState('');
+  const [msg, setMsg] = useState("");
   const navigate = useNavigate();
   useEffect(()=>{
     refreshToken();
@@ -20,6 +22,7 @@ const EditForm = () => {
       const decoded = jwt_decode(response.data.accessToken);
       setName(decoded.name);
       setEmail(decoded.email);
+      setId(decoded.id);
       setExpire(decoded.exp);
     } catch (error) {
         if(error.response){
@@ -27,9 +30,20 @@ const EditForm = () => {
         }
     }
   }
+
+  const update_User = async(e)=>{
+    e.preventDefault();
+    try {
+      await axios.put(`http://localhost:5000/users/${id}`, {
+          name : name,
+        });
+    } catch (error) {
+      setMsg(error.response.data.msg);
+    }
+  }
   return (
     <div className="form-wrap3">
-      <form className="signup-form">
+      <form onSubmit={update_User} className="signup-form">
         <div className="heading">
           <h2>Edit Profile</h2>
         </div>
@@ -41,22 +55,22 @@ const EditForm = () => {
               type="text"
               className="input-field"
               placeholder="New Name"
-              //   value={name}
-              //   onChange={(e) => setName(e.target.value)}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
             />
           </div>
-          <div className="input-wrap">
+          {/* <div className="input-wrap">
             <input
               type="text"
               className="input-field"
               placeholder="New E-mail"
-              //   value={email}
-              //   onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
             />
-          </div>
+          </div> */}
           <button className="sign-btn">Save Changes</button>
         </div>
-        {/* <h5>{msg}</h5> */}
+        <h5>{msg}</h5>
       </form>
     </div>
   );

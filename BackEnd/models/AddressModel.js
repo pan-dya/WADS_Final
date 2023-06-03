@@ -25,7 +25,10 @@ const Address = db.define('address',{
     },
     postal_code:{
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        validate:{
+            len:[5]
+        }
     },
     userId: {
         type: DataTypes.INTEGER,
