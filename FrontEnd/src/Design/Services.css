@@ -19,6 +19,10 @@
     transition: var(--transition);
 }
 
+.service:hover {
+    cursor: pointer;
+}
+
 .service:hover .service_icon {
     background: var(--color-white);
     color: var(--color-primary);

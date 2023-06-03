@@ -1,24 +1,24 @@
-import '../Design/Services.css'
-import ServiceData from '../Data/ServiceData.js'
-import Card from './Card.js'
+import "../Design/Services.css";
+import ServiceData from "../Data/ServiceData.js";
+import Card from "./Card.js";
 
 const Services = () => {
   return (
-    <section id='services'>
+    <section id="services">
       <h2>Our Services</h2>
       <p>Choose from our available services</p>
-      <div className='container services_container'>
-        {
-          ServiceData.map(item => (
-            <Card key={item.id} className='service white'>
-              <div className='service_icon'>{item.icon}</div>
-              <div className='service_title'><h4>{item.title}</h4></div>
-            </Card>
-          ))
-        }
+      <div className="container services_container">
+        {ServiceData.map((item) => (
+          <Card key={item.id} className="service white" onClick={event => window.location.href='/'}>
+            <div className="service_icon">{item.icon}</div>
+            <div className="service_title">
+              <h4>{item.title}</h4>
+            </div>
+          </Card>
+        ))}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Services
+export default Services;

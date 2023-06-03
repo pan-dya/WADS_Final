@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
-import jwt_decode from 'jwt-decode';
+import jwt_decode from "jwt-decode";
 
 const AddressForm = () => {
   const [province, setProvince] = useState("");
@@ -15,7 +15,7 @@ const AddressForm = () => {
   const det = useRef("");
   const pos = useRef("");
   const [userId, setUserId] = useState("");
-  const [token, setToken] = useState('');
+  const [token, setToken] = useState("");
 
   useEffect(() => {
     fetchUser();
@@ -23,7 +23,7 @@ const AddressForm = () => {
 
   const fetchUser = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/token');
+      const response = await axios.get("http://localhost:5000/token");
       setToken(response.data.accessToken);
       const decoded = jwt_decode(response.data.accessToken);
       setUserId(decoded.userId);
@@ -37,22 +37,35 @@ const AddressForm = () => {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/address", {
-        province: province,
-        city: city,
-        regency: regency,
-        details: details,
-        postal_code: postal_Code,
-        userId: userId,
-      });
+      const response = await axios.get(
+        `http://localhost:5000/address/${userId}`
+      );
+      const existingAddress = response.data;
 
-      setProvince("");
-      setCity("");
-      setRegency("");
-      setDetails("");
-      setPostal_code("");
-      setMsg("Address Successfully Added");
+      if (existingAddress.length > 0) {
+        // Address exists, perform update
+        await axios.put(`http://localhost:5000/address/${userId}`, {
+          province: province,
+          city: city,
+          regency: regency,
+          details: details,
+          postal_code: postal_Code,
+        });
 
+        setMsg("Address Successfully Updated");
+      } else {
+        // Address does not exist, perform create
+        await axios.post("http://localhost:5000/address", {
+          province: province,
+          city: city,
+          regency: regency,
+          details: details,
+          postal_code: postal_Code,
+          userId: userId,
+        });
+
+        setMsg("Address Successfully Added");
+      }
     } catch (error) {
       if (error.response) {
         setMsg(error.response.data.msg);
