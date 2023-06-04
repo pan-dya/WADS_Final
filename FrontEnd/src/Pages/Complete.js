@@ -9,21 +9,17 @@ const Complete = () => {
     const [token, setToken] = useState('');
     const [email, setEmail] = useState('');
     const [expire, setExpire] = useState('');
-    const[userId, setUserId] = useState('');
-    const [serviceId, setServiceId] = useState('');
-    const [time, setTime] = useState('');
     const navigate = useNavigate();
 
     useEffect(()=>{
         refreshToken();
-      },[userId]);
+      },[]);
       const refreshToken = async ()=>{
         try {
           const response = await axios.get('http://localhost:5000/token');
           setToken(response.data.accessToken);
           const decoded = jwt_decode(response.data.accessToken);
           setEmail(decoded.email);
-          setUserId(decoded.userId);
           setExpire(decoded.exp);
         } catch (error) {
             if(error.response){
@@ -53,10 +49,6 @@ const Complete = () => {
         <div className='wrapper-complete'>
               <h3>Your order has been placed!</h3>
               <p>We will send an email to {email} with order confirmation and receipt. We will be in contact shortly.</p>
-              <div className='time-placed'>
-                  <i><BiTimeFive/></i>
-                  <p>{time}</p>
-              </div>
         </div>
     </div>
   )
