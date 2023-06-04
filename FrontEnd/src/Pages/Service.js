@@ -15,12 +15,15 @@ const Service = ({selectedService}) => {
   const [token, setToken] = useState('');
   const[userId, setUserId] = useState('');
   const [expire, setExpire] = useState('');
+  const [value, setValue] = useState('');
   const [msg, setMsg] = useState("");
+  const [TOS, setTOS] = useState("");
+  const [serviceDetails, setServiceDet] = useState("");
   const navigate = useNavigate();
   useEffect(()=>{
     refreshToken();
     grabAddress();
-  },[]);
+  },[userId]);
 
   const refreshToken = async ()=>{
     try {
@@ -59,11 +62,26 @@ const Service = ({selectedService}) => {
     }
   }
 
+  const AddToDB = async (e) =>{
+    e.preventDefault();
+    try {
+      await axios.post('http://localhost:5000/services',{
+        typeOfService: selectedService,
+        details: serviceDetails,
+        userId:userId
+      });
+
+      navigate('/submitted');
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <>
       <div className="padding"></div>
       <div className="service-container">
-        <form className="service-box">
+        <form onSubmit={AddToDB} className="service-box">
           <div className="left">
             <h2>Details</h2>
             <p className="field">Name: {name}</p>
@@ -89,8 +107,9 @@ const Service = ({selectedService}) => {
               <option value={7}>Medical Support</option>
               <option value={8}>Others</option>
             </select>
-            <textarea placeholder="Job Details" class="field"></textarea>
-            <button class="sign-btn">Send</button>
+            <textarea onChange={(e)=>setServiceDet(e.target.value)} placeholder="Job Details" class="field" required></textarea>
+            <button type="submit" class="sign-btn">Send</button>
+            <p>{msg}</p>
           </div>
         </form>
       </div>
