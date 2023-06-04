@@ -10,16 +10,7 @@ export const getServices = async (req, res) => {
           userId: userId,
         },
         attributes: [
-          "gardening",
-          "housework",
-          "medical_support",
-          "mental_support",
-          "heavy_lifting",
-          "delivery",
-          "construction",
-          "others",
-          "details",
-          "userId"
+          "typeOfService"
         ],
       });
       res.json(address);
@@ -29,18 +20,11 @@ export const getServices = async (req, res) => {
   };
 
 export const fillServices = async (req, res) => {
-    const { gardening, housework, mental_support, heavy_lifting, delivery, construction, medical_support, others, details, userId } = req.body;
+    const { typeOfService, details, userId } = req.body;
     // const userId = req.params.userId;
     try {
-      await Address.create({
-        gardening: gardening,
-        housework:housework,
-        medical_support: medical_support,
-        mental_support: mental_support,
-        heavy_lifting: heavy_lifting,
-        delivery: delivery,
-        construction: construction,
-        others: others,
+      await Services.create({
+        typeOfService: typeOfService,
         details: details,
         userId: userId,
       });
