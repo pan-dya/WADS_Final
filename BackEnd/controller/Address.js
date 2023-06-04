@@ -5,6 +5,30 @@ export const getAddress = async (req, res) => {
   const userId = req.params.userId;
 
   try {
+    const address = await Address.findAll({
+      where: {
+        userId: userId,
+      },
+      attributes: [
+        "id",
+        "province",
+        "city",
+        "regency",
+        "details",
+        "postal_code",
+        "userId",
+      ],
+    });
+    res.json(address);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getAddress2 = async (req, res) => {
+  const userId = req.params.userId;
+
+  try {
     const address = await Address.findOne({
       where: {
         userId: userId,

@@ -40,7 +40,7 @@ const Service = ({selectedService}) => {
   
   const grabAddress = async ()=>{
     try {
-      const response = await axios.get(`http://localhost:5000/address/${userId}`);
+      const response = await axios.get(`http://localhost:5000/addresses/${userId}`);
       const userAddress = response.data;
       const province = userAddress.province;
       const city = userAddress.city;
@@ -66,7 +66,7 @@ const Service = ({selectedService}) => {
         <form className="service-box">
           <div className="left">
             <h2>Details</h2>
-            <div className="field">Name: {name}</div>
+            <p className="field">Name: {name}</p>
             <p className="field">E-mail: {email}</p> 
             <h2>Address</h2>
             <p className="field">Province: {province}</p>

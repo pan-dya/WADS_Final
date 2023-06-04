@@ -1,6 +1,6 @@
 import express from "express";
 import { getUsers,Register, Login, Logout, updateUser } from "../controller/Users.js";
-import { getAddress, add_Address, updateAddress } from "../controller/Address.js";
+import { getAddress, add_Address, updateAddress, getAddress2 } from "../controller/Address.js";
 import { getServices, fillServices } from "../controller/Services.js";
 import { verifyToken } from "../middleware/verifyToken.js";
 import { refreshToken } from "../controller/RefreshToken.js";
@@ -9,7 +9,8 @@ const router = express.Router();
 
 router.get('/services',getServices);
 router.post('/services', fillServices);
-router.get('/address/:userId',getAddress);
+router.get('/address/:userId', getAddress);
+router.get('/addresses/:userId', getAddress2);
 router.post('/address', add_Address);
 router.put('/address/:userId', updateAddress);
 router.get('/users',verifyToken,getUsers);
