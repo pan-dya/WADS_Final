@@ -86,18 +86,23 @@ export const Logout = async (req,res)=>{
 
 export const updateUser = async (req, res) => {
   const { name, id } = req.body;
+  const refreshToken = req.cookies.refreshToken;
   
   try {
-    const user = await Users.findOne({
-      where: { id : id },
+    const user = await Users.findAll({
+      where: { refresh_token: refreshToken },
     });
     if (!user) {
       return res.status(404).json({ msg: "User not found" });
     }
+    const userId = user[0].id;
+    await Users.update({name:name},{
+        where:{
+            id:userId
+        }
+    });
   
-    user.name = name;
-  
-    await user.save();
+    // await user.save();
   
     res.json({ msg: "User Details Updated Successfully" });
   } catch (error) {

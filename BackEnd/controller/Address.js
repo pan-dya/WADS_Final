@@ -63,7 +63,7 @@ export const updateAddress = async (req, res) => {
     address.details = details;
     address.postal_code = postal_code;
 
-    await address.save();
+    await address.save();+
 
     res.json({ msg: "Address successfully updated" });
   } catch (error) {

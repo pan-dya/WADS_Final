@@ -1,5 +1,5 @@
 GET http://localhost:5000/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsIm5hbWUiOiJKdXN0aW4gIiwiZW1haWwiOiJKdXN0aW5AZ21haWwuY29tIiwiaWF0IjoxNjg1Njk1OTcyLCJleHAiOjE2ODU2OTYwMDJ9.Lyaqs0OJmmBxQXRfcS5ZWLds4rY8mZC0cgHevA-_I5Q"
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsIm5hbWUiOiJKdXN0aW4iLCJlbWFpbCI6Ikp1c3RpbkBnbWFpbC5jb20iLCJpYXQiOjE2ODU4NjY4OTIsImV4cCI6MTY4NTg2NjkyMn0.ggmi2GDfOvJNErr774RdzRU3EwSaIlHG7iY-lL5feBE
 ###
 POST http://localhost:5000/users
 Content-Type: application/json
@@ -53,4 +53,12 @@ Content-Type: application/json
     "details": "updated address",
     "postal_code": 16356,
     "userId": 2
+}
+
+###
+PUT http://localhost:5000/users/3
+Content-Type: application/json
+
+{
+    "name": "Jason"
 }

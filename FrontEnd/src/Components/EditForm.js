@@ -7,7 +7,7 @@ const EditForm = () => {
   const [name, setName]= useState('');
   const [email, setEmail] = useState('');
   const [token, setToken] = useState('');
-  const[id, setId] = useState('');
+  const[userId, setUserId] = useState('');
   const [expire, setExpire] = useState('');
   const [msg, setMsg] = useState("");
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ const EditForm = () => {
       const decoded = jwt_decode(response.data.accessToken);
       setName(decoded.name);
       setEmail(decoded.email);
-      setId(decoded.id);
+      setUserId(decoded.userId);
       setExpire(decoded.exp);
     } catch (error) {
         if(error.response){
@@ -34,9 +34,10 @@ const EditForm = () => {
   const update_User = async(e)=>{
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/users/${id}`, {
-          name : name,
+      await axios.put(`http://localhost:5000/users/${userId}`, {
+          name:name
         });
+        navigate(0);
     } catch (error) {
       setMsg(error.response.data.msg);
     }
