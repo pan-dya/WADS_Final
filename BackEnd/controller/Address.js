@@ -1,7 +1,5 @@
 import Address from "../models/AddressModel.js";
-import Users from "../models/UserModel.js";
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
+
 
 export const getAddress = async (req, res) => {
   const userId = req.params.userId;

@@ -56,9 +56,20 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:5000/users/3
+GET http://localhost:5000/services
+
+###
+POST http://localhost:5000/services
 Content-Type: application/json
 
 {
-    "name": "Jason"
+    "gardening":"1",
+    "housework":"0",
+    "mental_support":"0",
+    "heavy_lifting":"0",
+    "delivery":"0",
+    "construction":"0",
+    "medical_support":"0",
+    "others":"0",
+    "details":"blablabalb vblbl ablabal alb alb alb lab lab labl blbalb lbalb alb al blab a",
 }
