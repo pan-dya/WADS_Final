@@ -92,7 +92,7 @@ const Profile = () => {
               </div>
             </li>
             <li>
-              <div
+              {/* <div
                 className={toggleState === 3 ? "active-sidenav" : "sidenav"}
                 onClick={() => toggleTab(3)}
               >
@@ -100,7 +100,7 @@ const Profile = () => {
                   <BiLockOpenAlt />
                 </i>
                 <span>Security</span>
-              </div>
+              </div> */}
             </li>
           </ul>
         </div>
