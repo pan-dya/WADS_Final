@@ -46,7 +46,7 @@ const App = () => {
           }
         >
           <Route path="/submitted" element={<Complete />}></Route>
-          <Route path="/services" element={<Service selectedService={selectedService}/>}></Route>
+          <Route path="/services" element={<Service selectedService={selectedService} setSelectedService={setSelectedService}/>}></Route>
         </Route>
       </Routes>
     </Router>

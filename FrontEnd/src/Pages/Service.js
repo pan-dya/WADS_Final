@@ -4,7 +4,7 @@ import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 import {useNavigate} from 'react-router-dom';
 
-const Service = ({selectedService}) => {
+const Service = ({selectedService, setSelectedService}) => {
   const [name, setName]= useState('');
   const [email, setEmail] = useState('');
   const [province, setProvince] = useState("");
@@ -74,6 +74,10 @@ const Service = ({selectedService}) => {
     }
   }
 
+  const handleServiceChange = (event) => {
+    setSelectedService(event.target.value)
+  }
+
   return (
     <>
       <div className="padding"></div>
@@ -94,7 +98,7 @@ const Service = ({selectedService}) => {
           <div className="right">
             <h2>Job Details</h2>
             <h5>Tell us more (number of workers, days of contract, etc)</h5>
-            <select className="field" value={selectedService}>
+            <select className="field" value={selectedService} onChange={handleServiceChange}>
               <option value={1}>Gardening</option>
               <option value={2}>Housework</option>
               <option value={3}>Mental Support</option>
