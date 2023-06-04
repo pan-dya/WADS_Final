@@ -1,6 +1,7 @@
 import { Sequelize } from "sequelize";
 import db from "../config/Database.js";
 import Address from "./AddressModel.js";
+import Services from "./ServiceModels.js";
 
 const {DataTypes} = Sequelize;
 
@@ -42,4 +43,11 @@ Users.hasOne(Address,{
     onDelete: "cascade"
 });
 
+Users.hasMany(Services,{
+    foreignKey:{
+        name:"userId",
+        
+    },
+    onDelete: "cascade"
+});
 export default Users;
