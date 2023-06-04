@@ -32,7 +32,10 @@ const Navbar = () => {
           ))}
         </ul>
         <div className="button_container">
-          <button onClick={event =>  window.location.href='/profile'} id="profile_icon">
+          <button
+            onClick={(event) => (window.location.href = "/profile")}
+            id="profile_icon"
+          >
             <AiOutlineUser />
           </button>
           <div className="vl"></div>

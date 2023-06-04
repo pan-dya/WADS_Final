@@ -1,87 +1,86 @@
 .footer {
-    background: var(--color-primary);
-    /* position: fixed; */
-    bottom: 0px;
-    height: 30vh;
+  background: var(--color-primary);
+  /* position: fixed; */
+  bottom: 0px;
+  height: 30vh;
 }
 
 .footer-padding {
-    padding: 2rem 6rem;
+  padding: 2rem 6rem;
 }
 
 .footer-links {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    text-align: left;
-    margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 0.5rem;
 }
 
 .footer-links-div {
-    width: 150px;
-    margin: 1rem;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    color: white;
+  width: 150px;
+  margin: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  color: white;
 }
 
 .footer-links-div h4 {
-    color: white;
-    margin-bottom: 0.9rem;
+  color: white;
+  margin-bottom: 0.9rem;
 }
 
 .footer-links-div img {
-    width: 1.5rem;
-    height: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .footer-links p {
-    padding-top: 0.2rem;
-    padding-bottom: 0.1rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.1rem;
 }
 
 hr {
-    width: 100%;
-    border: 1px solid white;
-    height: 1px;
-    margin-bottom: 2rem;
+  width: 100%;
+  border: 1px solid white;
+  height: 1px;
+  margin-bottom: 2rem;
 }
 
 .footer-below {
-    display: flex;
-    flex-direction: row;
-    margin-top: 0.2rem;
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.2rem;
 }
 
 .copyright {
-    font-size: 13px;
-    line-height: 15px;
-    color: white;
-    font-weight: 600;
+  font-size: 13px;
+  line-height: 15px;
+  color: white;
+  font-weight: 600;
 }
 
-@media screen and (max-width: 1024px) { 
-
+@media screen and (max-width: 1024px) {
 }
 
-@media screen and (max-width: 600px) and (max-height:850px) { 
-    .footer {
-        height: 45vh;
-    }
+@media screen and (max-width: 600px) and (max-height: 850px) {
+  .footer {
+    height: 45vh;
+  }
 }
 
-@media screen and (max-width: 600px) and (max-height:675px) { 
-    .footer {
-        height: 55vh;
-    }
+@media screen and (max-width: 600px) and (max-height: 675px) {
+  .footer {
+    height: 55vh;
+  }
 }
 
-@media screen and (max-height: 850px) and (min-width: 601px) { 
-    .footer {
-        height: 35vh;
-    }
+@media screen and (max-height: 850px) and (min-width: 601px) {
+  .footer {
+    height: 35vh;
+  }
 }

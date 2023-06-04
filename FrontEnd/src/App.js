@@ -33,7 +33,15 @@ const App = () => {
             </>
           }
         >
-          <Route path="/" element={<Home selectedService={selectedService} setSelectedService={setSelectedService} />}></Route>
+          <Route
+            path="/"
+            element={
+              <Home
+                selectedService={selectedService}
+                setSelectedService={setSelectedService}
+              />
+            }
+          ></Route>
           <Route path="/faq" element={<Faq />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
         </Route>
@@ -46,7 +54,15 @@ const App = () => {
           }
         >
           <Route path="/submitted" element={<Complete />}></Route>
-          <Route path="/services" element={<Service selectedService={selectedService} setSelectedService={setSelectedService}/>}></Route>
+          <Route
+            path="/services"
+            element={
+              <Service
+                selectedService={selectedService}
+                setSelectedService={setSelectedService}
+              />
+            }
+          ></Route>
         </Route>
       </Routes>
     </Router>

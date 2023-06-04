@@ -15,7 +15,6 @@ const AddressForm = () => {
   const det = useRef("");
   const pos = useRef("");
   const [userId, setUserId] = useState("");
-  const [token, setToken] = useState("");
 
   useEffect(() => {
     fetchUser();
@@ -24,10 +23,8 @@ const AddressForm = () => {
   const fetchUser = async () => {
     try {
       const response = await axios.get("http://localhost:5000/token");
-      setToken(response.data.accessToken);
       const decoded = jwt_decode(response.data.accessToken);
       setUserId(decoded.userId);
-      // setExpire(decoded.exp);
     } catch (error) {
       console.log(error);
     }
@@ -41,7 +38,7 @@ const AddressForm = () => {
         `http://localhost:5000/address/${userId}`
       );
       const existingAddress = response.data;
-  
+
       if (existingAddress.length > 0) {
         // Address exists, perform update
         await axios.put(`http://localhost:5000/address/${userId}`, {
@@ -51,7 +48,6 @@ const AddressForm = () => {
           details: details,
           postal_code: postal_Code,
         });
-
 
         setMsg("Address Successfully Updated");
       } else {

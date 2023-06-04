@@ -1,211 +1,209 @@
 .profile-page {
-    width: 100%;
-    min-height: 100vh;
-    overflow: hidden;
-    background-color: var(--color-white);
-    /* background: ; */
-    /* padding: 0px 0px 2rem; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: var(--color-white);
+  /* background: ; */
+  /* padding: 0px 0px 2rem; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .box-profile {
-    position: relative;
-    display: flex;
-    width: 100%;
-    max-width: 1250px;
-    height: 640px;
-    background-color: var(--color-light);
-    /* border-radius: 3.3rem; */
-    box-shadow: 30px 30px 40px -10px rgba(0, 0, 0, 0.57);
-    margin-top: 10vh;
-  }
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 1250px;
+  height: 640px;
+  background-color: var(--color-light);
+  /* border-radius: 3.3rem; */
+  box-shadow: 30px 30px 40px -10px rgba(0, 0, 0, 0.57);
+  margin-top: 10vh;
+}
 
 .sidebar {
-    /* position: fixed; */
-    background: var(--color-primary);
-    width: 25vh;
-    height: auto;
-    padding: 0 2vh 0;
-    overflow: hidden;
-    white-space: nowrap; /* Don't forget this one */
-    text-overflow: ellipsis;
+  /* position: fixed; */
+  background: var(--color-primary);
+  width: 25vh;
+  height: auto;
+  padding: 0 2vh 0;
+  overflow: hidden;
+  white-space: nowrap; /* Don't forget this one */
+  text-overflow: ellipsis;
 }
 
 .user-profile h2 {
-    text-align: center;
-    color: white;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .user-profile {
-    padding-top: 5vh;
-    background: transparent;
-    color: white;
-    font-size: 7rem;
-    text-align: center;
-    overflow: hidden;
+  padding-top: 5vh;
+  background: transparent;
+  color: white;
+  font-size: 7rem;
+  text-align: center;
+  overflow: hidden;
 }
 
 .sidebar-icons {
-    padding-right: 10px;
+  padding-right: 10px;
 }
 
 .sidebar ul li {
-    margin:25px 0px 25px 25px;
+  margin: 25px 0px 25px 25px;
 }
 
 .sidenav {
-    color: var(--color-white);
-    height: 50px;
-    line-height: 50px;
-    padding-left: 25px;
+  color: var(--color-white);
+  height: 50px;
+  line-height: 50px;
+  padding-left: 25px;
 }
 
-
 .sidenav:hover {
-    color: var(--color-dark);
-    margin-left: 10px;
+  color: var(--color-dark);
+  margin-left: 10px;
 }
 
 .active-sidenav {
-    color: white;
-    padding-left: 25px;
-    background-color: var(--color-primary-lighter);
-    height: 45px;
-    width: 150px;
-    line-height: 50px;
-    border-radius: var(--border-radius-1);
+  color: white;
+  padding-left: 25px;
+  background-color: var(--color-primary-lighter);
+  height: 45px;
+  width: 150px;
+  line-height: 50px;
+  border-radius: var(--border-radius-1);
 }
 
 .profile-tab {
-    padding-left: 1vh;
-    margin-top: 5vh;
-    margin-left: 5vh;
-    display: none;
+  padding-left: 1vh;
+  margin-top: 5vh;
+  margin-left: 5vh;
+  display: none;
 }
 
 .active-profile-tab {
-    padding-left: 1vh;
-    margin-top: 5vh;
-    margin-left: 5vh;
-    display: block;
+  padding-left: 1vh;
+  margin-top: 5vh;
+  margin-left: 5vh;
+  display: block;
 }
-
 
 /* FORM 1 (EDIT PROFILE) */
 
 .form-wrap3 {
-    margin-left: 30vh;
-    position: absolute;
-    height: 100%;
-    /* width: 100%; */
-    top: 0;
-    left: 0;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    transition: 0.8s ease-in-out;
+  margin-left: 30vh;
+  position: absolute;
+  height: 100%;
+  /* width: 100%; */
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  transition: 0.8s ease-in-out;
 }
 
 /* FORM 2 (ADDRESS) */
 .form-wrap4 {
-    margin-left: 30vh;
-    position: absolute;
-    height: 100%;
-    /* width: 100%; */
-    top: 0;
-    left: 0;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    transition: 0.8s ease-in-out;
+  margin-left: 30vh;
+  position: absolute;
+  height: 100%;
+  /* width: 100%; */
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  transition: 0.8s ease-in-out;
 }
 
 .input-field2 {
-    position: absolute;
-    width: 300%;
-    height: 100%;
-    background: none;
-    border: none;
-    outline: none;
-    border-bottom: 1px solid #bbb;
-    padding: 0;
-    font-size: 0.95rem;
-    color: var(--color-black);
-    transition: var(--transition);
+  position: absolute;
+  width: 300%;
+  height: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #bbb;
+  padding: 0;
+  font-size: 0.95rem;
+  color: var(--color-black);
+  transition: var(--transition);
 }
 
-.input-field2:focus{
-    border-bottom: 2px solid var(--color-primary);
-    /* background-color: #fff; */
+.input-field2:focus {
+  border-bottom: 2px solid var(--color-primary);
+  /* background-color: #fff; */
 }
 
 .input-field2:focus::placeholder {
-    color: var(--color-primary);
+  color: var(--color-primary);
 }
 
 @media screen and (max-width: 1024px) {
-    .sidenav span{
-        display: none
-    }
-    .active-sidenav span{
-        display: none;
-    }
+  .sidenav span {
+    display: none;
+  }
+  .active-sidenav span {
+    display: none;
+  }
 
-    .active-sidenav {
-        height: 45px;
-        width: 50px;
-        padding-left: 15px;
-    }
+  .active-sidenav {
+    height: 45px;
+    width: 50px;
+    padding-left: 15px;
+  }
 
-    .sidenav {
-        padding-left: 15px;
-    }
+  .sidenav {
+    padding-left: 15px;
+  }
 
-    .user-profile {
-        padding-left: 25px;
-        font-size: 3rem;
-    }
+  .user-profile {
+    padding-left: 25px;
+    font-size: 3rem;
+  }
 
-    .sidebar h2 {
-        display: none;
-    }
+  .sidebar h2 {
+    display: none;
+  }
 
-    .form-wrap3 {
-        margin-left: 15vh;
-    }
+  .form-wrap3 {
+    margin-left: 15vh;
+  }
 
-    .form-wrap4 {
-        margin-left: 15vh;
-    }
+  .form-wrap4 {
+    margin-left: 15vh;
+  }
 
-    .input-field2 {
-        width: 100%;
-    }
+  .input-field2 {
+    width: 100%;
+  }
 
-    .sidebar {
-        width: auto;
-    }
+  .sidebar {
+    width: auto;
+  }
 }
 
 @media screen and (max-height: 850px) {
-    .profile-page {
-        min-height: 110vh;
-    }
-    .sidebar {
-        width: auto;
-    }
+  .profile-page {
+    min-height: 110vh;
+  }
+  .sidebar {
+    width: auto;
+  }
 }
 
 @media screen and (max-height: 675px) {
-    .profile-page {
-        min-height: 120vh;
-    }
-    .sidebar {
-        width: auto;
-    }
+  .profile-page {
+    min-height: 120vh;
+  }
+  .sidebar {
+    width: auto;
+  }
 }
