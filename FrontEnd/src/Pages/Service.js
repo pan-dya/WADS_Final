@@ -15,9 +15,6 @@ const Service = ({selectedService}) => {
   const [token, setToken] = useState('');
   const[userId, setUserId] = useState('');
   const [expire, setExpire] = useState('');
-  const [value, setValue] = useState('');
-  const [msg, setMsg] = useState("");
-  const [TOS, setTOS] = useState("");
   const [serviceDetails, setServiceDet] = useState("");
   const navigate = useNavigate();
   useEffect(()=>{
@@ -109,7 +106,6 @@ const Service = ({selectedService}) => {
             </select>
             <textarea onChange={(e)=>setServiceDet(e.target.value)} placeholder="Job Details" class="field" required></textarea>
             <button type="submit" class="sign-btn">Send</button>
-            <p>{msg}</p>
           </div>
         </form>
       </div>

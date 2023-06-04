@@ -7,22 +7,42 @@ import '../Design/Complete.css'
 
 const Complete = () => {
     const [token, setToken] = useState('');
+    const [email, setEmail] = useState('');
     const [expire, setExpire] = useState('');
+    const[userId, setUserId] = useState('');
+    const [serviceId, setServiceId] = useState('');
+    const [time, setTime] = useState('');
     const navigate = useNavigate();
 
     useEffect(()=>{
         refreshToken();
-      },[]);
+        grabServices();
+      },[userId]);
       const refreshToken = async ()=>{
         try {
           const response = await axios.get('http://localhost:5000/token');
           setToken(response.data.accessToken);
           const decoded = jwt_decode(response.data.accessToken);
+          setEmail(decoded.email);
+          setUserId(decoded.userId);
           setExpire(decoded.exp);
         } catch (error) {
             if(error.response){
               navigate("/login");
             }
+        }
+      }
+
+      const grabServices = async()=>{
+        try {
+          const response = await axios.get(`http://localhost:5000/services/${userId}`);
+          const userAddress = response.data;
+          const id = userAddress.id;
+          const updatedAt = userAddress.updatedAt;
+          setServiceId(id);
+          setTime(updatedAt);
+        } catch (error) {
+          console.log(error);
         }
       }
     
@@ -39,17 +59,18 @@ const Complete = () => {
       },(error)=>{
           return Promise.reject(error);
       });
+    
 
   return (
     <div>
       <div className='padding'></div>
       <h2 className='page-title'>Thank You!</h2>
         <div className='wrapper-complete'>
-              <h3>Your order #orderno has been placed!</h3>
-              <p>We sent an email to email with order confirmation and receipt. We will be in contact shortly.</p>
+              <h3>Your order #{serviceId} has been placed!</h3>
+              <p>We sent an email to {email} with order confirmation and receipt. We will be in contact shortly.</p>
               <div className='time-placed'>
                   <i><BiTimeFive/></i>
-                  <p>time</p>
+                  <p>{time}</p>
               </div>
         </div>
     </div>
