@@ -5,12 +5,16 @@ export const getServices = async (req, res) => {
     const userId = req.params.userId;
   
     try {
-      const address = await Services.findAll({
+      const address = await Services.findOne({
         where: {
           userId: userId,
         },
         attributes: [
-          "typeOfService"
+          "id",
+          "typeOfService",
+          "details",
+          "updatedAt",
+          "userId"
         ],
       });
       res.json(address);
