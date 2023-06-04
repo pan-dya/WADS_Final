@@ -16,7 +16,6 @@ const Complete = () => {
 
     useEffect(()=>{
         refreshToken();
-        grabServices();
       },[userId]);
       const refreshToken = async ()=>{
         try {
@@ -32,20 +31,6 @@ const Complete = () => {
             }
         }
       }
-
-      const grabServices = async()=>{
-        try {
-          const response = await axios.get(`http://localhost:5000/services/${userId}`);
-          const userAddress = response.data;
-          const id = userAddress.id;
-          const updatedAt = userAddress.updatedAt;
-          setServiceId(id);
-          setTime(updatedAt);
-        } catch (error) {
-          console.log(error);
-        }
-      }
-    
       const axiosJWT = axios.create();
       axiosJWT.interceptors.request.use(async(config)=>{
         const currentDate = new Date();
@@ -66,8 +51,8 @@ const Complete = () => {
       <div className='padding'></div>
       <h2 className='page-title'>Thank You!</h2>
         <div className='wrapper-complete'>
-              <h3>Your order #{serviceId} has been placed!</h3>
-              <p>We sent an email to {email} with order confirmation and receipt. We will be in contact shortly.</p>
+              <h3>Your order has been placed!</h3>
+              <p>We will send an email to {email} with order confirmation and receipt. We will be in contact shortly.</p>
               <div className='time-placed'>
                   <i><BiTimeFive/></i>
                   <p>{time}</p>
