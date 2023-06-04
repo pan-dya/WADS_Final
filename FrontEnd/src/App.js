@@ -14,8 +14,10 @@ import PageNotFound from "./Pages/PageNotFound.js";
 import Profile from "./Pages/Profile.js";
 import Complete from "./Pages/Complete.js";
 import Service from "./Pages/Service.js";
+import { useState } from "react";
 
 const App = () => {
+  const [selectedService, setSelectedService] = useState(0);
   return (
     <Router>
       <Routes>
@@ -31,7 +33,7 @@ const App = () => {
             </>
           }
         >
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={<Home selectedService={selectedService} setSelectedService={setSelectedService} />}></Route>
           <Route path="/faq" element={<Faq />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
         </Route>
@@ -44,7 +46,7 @@ const App = () => {
           }
         >
           <Route path="/submitted" element={<Complete />}></Route>
-          <Route path="/services" element={<Service />}></Route>
+          <Route path="/services" element={<Service selectedService={selectedService}/>}></Route>
         </Route>
       </Routes>
     </Router>

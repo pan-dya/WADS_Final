@@ -7,7 +7,7 @@ import About from '../Components/About.js'
 import Services from '../Components/Services.js'
 
 
-const Home = () => {
+const Home = ({selectedService, setSelectedService}) => {
   const [name, setName]= useState('');
   const [token, setToken] = useState('');
   const [expire, setExpire] = useState('');
@@ -48,7 +48,7 @@ const Home = () => {
       <Header/>
       {/* <h1>Welcome Back {name}</h1> */}
       <About/>
-      <Services/>
+      <Services selectedService={selectedService} setSelectedService={setSelectedService} />
     </main>
   )
 }
