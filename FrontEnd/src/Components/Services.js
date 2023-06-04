@@ -31,7 +31,7 @@ const Services = ({selectedService, setSelectedService}) => {
               className="service white"
               onClick={() => handleCardClick(item.id)}
             >
-              <div>{item.id}</div>
+              {/* <div>{item.id}</div> */}
               <div className="service_icon">{item.icon}</div>
               <div className="service_title">
                 <h4>{item.title}</h4>

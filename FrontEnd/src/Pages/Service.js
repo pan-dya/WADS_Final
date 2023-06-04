@@ -3,9 +3,8 @@ import "../Design/Service.css";
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 import {useNavigate} from 'react-router-dom';
-import E from "react-script";
 
-const Service = () => {
+const Service = ({selectedService}) => {
   const [name, setName]= useState('');
   const [email, setEmail] = useState('');
   const [province, setProvince] = useState("");
@@ -67,7 +66,7 @@ const Service = () => {
         <form className="service-box">
           <div className="left">
             <h2>Details</h2>
-            <p className="field">Name: {name}</p>
+            <div className="field">Name: {name}</div>
             <p className="field">E-mail: {email}</p> 
             <h2>Address</h2>
             <p className="field">Province: {province}</p>
@@ -80,15 +79,15 @@ const Service = () => {
           <div className="right">
             <h2>Job Details</h2>
             <h5>Tell us more (number of workers, days of contract, etc)</h5>
-            <select className="field" placeholder="Type of Service">
-              <option>Gardening</option>
-              <option>Housework</option>
-              <option>Mental Support</option>
-              <option>Heavy Lifting</option>
-              <option>Delivery</option>
-              <option>Construction</option>
-              <option>Medical Support</option>
-              <option>Others</option>
+            <select className="field" value={selectedService}>
+              <option value={1}>Gardening</option>
+              <option value={2}>Housework</option>
+              <option value={3}>Mental Support</option>
+              <option value={4}>Heavy Lifting</option>
+              <option value={5}>Delivery</option>
+              <option value={6}>Construction</option>
+              <option value={7}>Medical Support</option>
+              <option value={8}>Others</option>
             </select>
             <textarea placeholder="Job Details" class="field"></textarea>
             <button class="sign-btn">Send</button>

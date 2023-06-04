@@ -10,11 +10,13 @@ export const getAddress = async (req, res) => {
         userId: userId,
       },
       attributes: [
+        "id",
         "province",
         "city",
         "regency",
         "details",
         "postal_code",
+        "userId",
       ],
     });
     res.json(address);
