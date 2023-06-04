@@ -25,14 +25,20 @@
 .sidebar {
     /* position: fixed; */
     background: var(--color-primary);
-    width: auto;
+    width: 25vh;
     height: auto;
     padding: 0 2vh 0;
+    overflow: hidden;
+    white-space: nowrap; /* Don't forget this one */
+    text-overflow: ellipsis;
 }
 
-.sidebar h2 {
+.user-profile h2 {
     text-align: center;
     color: white;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .user-profile {
@@ -41,6 +47,7 @@
     color: white;
     font-size: 7rem;
     text-align: center;
+    overflow: hidden;
 }
 
 .sidebar-icons {
@@ -75,12 +82,14 @@
 }
 
 .profile-tab {
+    padding-left: 1vh;
     margin-top: 5vh;
     margin-left: 5vh;
     display: none;
 }
 
 .active-profile-tab {
+    padding-left: 1vh;
     margin-top: 5vh;
     margin-left: 5vh;
     display: block;
@@ -128,7 +137,16 @@
     font-size: 0.95rem;
     color: var(--color-black);
     transition: var(--transition);
-  }
+}
+
+.input-field2:focus{
+    border-bottom: 2px solid var(--color-primary);
+    /* background-color: #fff; */
+}
+
+.input-field2:focus::placeholder {
+    color: var(--color-primary);
+}
 
 @media screen and (max-width: 1024px) {
     .sidenav span{
@@ -168,16 +186,26 @@
     .input-field2 {
         width: 100%;
     }
+
+    .sidebar {
+        width: auto;
+    }
 }
 
 @media screen and (max-height: 850px) {
     .profile-page {
         min-height: 110vh;
     }
+    .sidebar {
+        width: auto;
+    }
 }
 
 @media screen and (max-height: 675px) {
     .profile-page {
         min-height: 120vh;
+    }
+    .sidebar {
+        width: auto;
     }
 }

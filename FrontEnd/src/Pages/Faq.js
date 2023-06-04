@@ -6,7 +6,6 @@ import '../Design/Faq.css'
 
 const Faq = () => {
   const [selected, setSelected] = useState(null)
-  const [name, setName]= useState('');
   const [token, setToken] = useState('');
   const [expire, setExpire] = useState('');
   const navigate = useNavigate();
@@ -18,7 +17,6 @@ const Faq = () => {
       const response = await axios.get('http://localhost:5000/token');
       setToken(response.data.accessToken);
       const decoded = jwt_decode(response.data.accessToken);
-      setName(decoded.name);
       setExpire(decoded.exp);
     } catch (error) {
         if(error.response){
@@ -34,7 +32,6 @@ const Faq = () => {
       const response = await axios.get('http://localhost:5000/token');
       setToken(response.data.accessToken);
       const decoded = jwt_decode(response.data.accessToken);
-      setName(decoded.name);
       setExpire(decoded.exp);
     }
     return config;

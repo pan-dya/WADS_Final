@@ -114,6 +114,15 @@ form {
   transition: var(--transition);
 }
 
+.input-field:focus{
+  border-bottom: 1px solid var(--color-primary);
+  /* background-color: #fff; */
+}
+
+.input-field:focus::placeholder {
+  color: var(--color-primary);
+}
+
 .sign-btn {
   display: inline-block;
   width: 100%;
