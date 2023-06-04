@@ -5,18 +5,16 @@ export const getAddress = async (req, res) => {
   const userId = req.params.userId;
 
   try {
-    const address = await Address.findAll({
+    const address = await Address.findOne({
       where: {
         userId: userId,
       },
       attributes: [
-        "id",
         "province",
         "city",
         "regency",
         "details",
         "postal_code",
-        "userId",
       ],
     });
     res.json(address);
