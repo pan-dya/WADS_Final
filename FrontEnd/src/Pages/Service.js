@@ -20,7 +20,7 @@ const Service = ({selectedService}) => {
   useEffect(()=>{
     refreshToken();
     grabAddress();
-  },[]);
+  },[userId]);
 
   const refreshToken = async ()=>{
     try {
