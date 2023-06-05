@@ -72,20 +72,21 @@ const Faq = () => {
 
 const data = [
   {
-    question: "Question 1",
+    question: "What payment are accepted?",
     answer:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, quidem velit. Corrupti soluta optio quibusdam voluptatem nulla, aliquam, sapiente molestiae obcaecati est repudiandae nesciunt sed dolore maiores quidem, ipsum libero?",
+      "We only accept cashless payment, like debit or credit card, QRIS and any e-wallet.",
   },
   {
-    question: "Question 2",
+    question: "How can we tip the workers?",
     answer:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, quidem velit. Corrupti soluta optio quibusdam voluptatem nulla, aliquam, sapiente molestiae obcaecati est repudiandae nesciunt sed dolore maiores quidem, ipsum libero?",
+      "For the tip, you can use cash or add it on your payment.",
   },
   {
-    question: "Question 3",
+    question: "Is there any available apps for mobile phone?",
     answer:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, quidem velit. Corrupti soluta optio quibusdam voluptatem nulla, aliquam, sapiente molestiae obcaecati est repudiandae nesciunt sed dolore maiores quidem, ipsum libero?",
+      "Currently, we haven’t planned to make any mobile apps",
   },
 ];
 
 export default Faq;
+
