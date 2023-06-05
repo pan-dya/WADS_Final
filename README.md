@@ -3,7 +3,7 @@
 <h4> COMP6703001 - Web Application Development and Security (Final Project) </h4>
 
 ## Deployed Website:
-https://odd-jobs-front-9wa50pnph-pan-dya.vercel.app/
+https://odd-jobs-front-2wn9o0y3d-pan-dya.vercel.app/
 
 ## Background Information:
 <h4>Odd Jobs is an
